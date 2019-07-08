@@ -11,7 +11,7 @@ sudo apt-get update -y && apt-get upgrade -y
 
 sudo apt-get install curl python-software-properties
 sudo curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-echo -e "${BLINK} ${GREEN} Finished updating.${DEFULT} ${NOBLINK}"
+echo -e "${BLINK} ${GREEN} Finished updating. ${DEFULT} ${NOBLINK}"
 
 echo -e "${BLINK} ${CYAN} Installing Git, NodeJs, MongoDB. ${DEFULT} ${NOBLINK}"
 sudo apt-get install -y git
@@ -37,4 +37,4 @@ echo -e "${BLINK} ${CYAN} Checking into Developer. ${DEFULT} ${NOBLINK}"
 sudo git checkout Developer
 sudo npm install
 
-sudo systemctl start jenkins
+sudo systemctl start poolapi
