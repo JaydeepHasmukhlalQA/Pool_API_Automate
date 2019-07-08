@@ -31,8 +31,7 @@ echo -e "${BLINK}${CYAN}Moving project to base.${DEFULT}${NOBLINK}"
 sudo mv TeamB_Pool_Project_API/ ../TeamB_Pool_Project_API/
 
 echo -e "${BLINK}${CYAN}CD into project.${DEFULT}${NOBLINK}"
-cd ..
-cd TeamB_Pool_Project_API
+cd ../TeamB_Pool_Project_API
 
 echo -e "${BLINK}${CYAN}Checking into Developer."
 sudo git checkout Developer
