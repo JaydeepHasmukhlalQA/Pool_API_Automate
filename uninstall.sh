@@ -7,5 +7,6 @@ NOBLINK="\e[25mNormal"
 echo -e "${BLINK} ${CYAN} Removing Files. ${DEFULT} ${NOBLINK}"
 sudo systemctl stop poolapi
 sudo systemctl disable poolapi
-rm -fR ../TeamB_Pool_Project_API
-rm -fR /etc/systemd/system/poolapi.service
+
+sudo rm -fR ../TeamB_Pool_Project_API
+sudo rm -fR /etc/systemd/system/poolapi.service
