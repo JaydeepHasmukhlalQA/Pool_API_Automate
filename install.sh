@@ -34,7 +34,7 @@ echo -e "${BLINK}${CYAN}CD into project.${DEFULT}${NOBLINK}"
 cd ..
 cd TeamB_Pool_Project_API
 
-echo -e "${BLINK}${CYAN}Checking into Developer.${DEFULT}${NOBLINK}"
+echo -e "${BLINK}${CYAN}Checking into Developer."
 sudo git checkout Developer
 sudo npm install
 
