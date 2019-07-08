@@ -9,15 +9,12 @@ sudo apt-get install -y git
 sudo apt-get install -y nodejs
 sudo apt-get install -y mongodb
 
-sudo cp ./mongodb.service /etc/systemd/system/
-sudo systemctl daemon-reload
-
 sudo git clone https://github.com/Nboaram/TeamAPoolProjectBackend.git
 sudo cd TeamAPoolProjectBackend
 sudo git checkout Developer
-
 sudo npm install
 
+sudo cp ./mongodb.service /etc/systemd/system/
+sudo systemctl daemon-reload
+
 sudo systemctl start poolapi
-
-
