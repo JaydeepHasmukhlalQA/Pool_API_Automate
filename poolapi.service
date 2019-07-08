@@ -1,0 +1,10 @@
+[Unit]
+Description=Running pool index.js via node
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/node /home/TeamAPoolProjectBackend/index.js
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
