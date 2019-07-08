@@ -2,35 +2,38 @@
 
 CYAN="\033[0;36"
 GREEN="\033[0;32m"
+DEFULT="\e[39mDefault"
+BLINK="\e[5mBlink"
+NOBLINK="\e[25mNormal"
 
-echo -e "${CYAN} Updateing."
+echo -e "${BLINK} ${CYAN} Updateing. ${DEFULT} ${NOBLINK}"
 sudo apt-get update -y && apt-get upgrade -y
 
 sudo apt-get install curl python-software-properties
 sudo curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-echo -e "${GREEN} Finished updating."
+echo -e "${BLINK} ${GREEN} Finished updating.${DEFULT} ${NOBLINK}"
 
-echo -e "${CYAN} Installing Git, NodeJs, MongoDB."
+echo -e "${BLINK} ${CYAN} Installing Git, NodeJs, MongoDB. ${DEFULT} ${NOBLINK}"
 sudo apt-get install -y git
 sudo apt-get install -y nodejs
 sudo apt-get install -y mongodb
-echo -e "${GREEN} Finished Installing."
+echo -e "${BLINK} ${GREEN} Finished Installing. ${DEFULT} ${NOBLINK}"
 
-echo -e "${CYAN} Installing API Service."
+echo -e "${BLINK} ${CYAN} Installing API Service. ${DEFULT} ${NOBLINK}"
 sudo cp ./poolapi.service /etc/systemd/system/
 sudo systemctl daemon-reload
-echo -e "${GREEN} Finished installing API Service."
+echo -e "${BLINK} ${GREEN} Finished installing API Service. ${DEFULT} ${NOBLINK}"
 
-echo -e "${CYAN} Cloning GIT repo."
+echo -e "${BLINK} ${CYAN} Cloning GIT repo. ${DEFULT} ${NOBLINK}"
 sudo git clone https://github.com/DimitriosKan/TeamB_Pool_Project_API.git
 
-echo -e "${CYAN} Moving project to base.."
+echo -e "${BLINK} ${CYAN} Moving project to base. ${DEFULT} ${NOBLINK}"
 sudo mv TeamB_Pool_Project_API/ ../TeamB_Pool_Project_API/
 
-echo -e "${CYAN} CD into project."
+echo -e "${BLINK} ${CYAN} CD into project. ${DEFULT} ${NOBLINK}"
 sudo cd TeamB_Pool_Project_API
 
-echo -e "${CYAN} Checking into Developer."
+echo -e "${BLINK} ${CYAN} Checking into Developer. ${DEFULT} ${NOBLINK}"
 sudo git checkout Developer
 sudo npm install
 
