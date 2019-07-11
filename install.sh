@@ -19,12 +19,17 @@ sudo apt-get install -y nodejs
 sudo apt-get install -y mongodb
 echo -e "${BLINK}${GREEN} Finished Installing.${DEFULT}${NOBLINK}"
 
+echo -e "${BLINK}${CYAN} Creating api user"
+sudo useradd --create-home api
+sudo usermod --shell /bin/bash api
+
 echo -e "${BLINK}${CYAN} Installing API Service.${DEFULT}${NOBLINK}"
 sudo cp ./poolapi.service /etc/systemd/system/
 sudo systemctl daemon-reload
 echo -e "${BLINK}${GREEN}Finished installing API Service.${DEFULT}${NOBLINK}"
 
 echo -e "${BLINK}${CYAN}Cloning GIT repo.${DEFULT}${NOBLINK}"
+cd /home/api
 sudo git clone https://github.com/DimitriosKan/TeamB_Pool_Project_API.git
 
 echo -e "${BLINK}${CYAN}Moving project to base.${DEFULT}${NOBLINK}"
@@ -35,7 +40,7 @@ cd ../TeamB_Pool_Project_API
 
 echo -e "${BLINK}${CYAN}Checking into Developer."
 sudo git checkout Developer
-sudo npm install
+yes | sudo npm install
 
 echo -e "${BLINK}${CYAN}Starting poolapi.service.${DEFULT}${NOBLINK}"
 sudo systemctl start poolapi

@@ -3,8 +3,8 @@ Description=TeamB_Pool_Project_API
 After=network.target
 
 [Service]
-WorkingDirectory=/home/jaydeeph_vaja
-ExecStart=/usr/bin/node /home/jaydeeph_vaja/TeamB_Pool_Project_API/index.js
+WorkingDirectory=/home/api
+ExecStart=/usr/bin/node /home/api/TeamB_Pool_Project_API/index.js
 Restart=on-failure
 
 [Install]
