@@ -17,13 +17,13 @@ sudo systemctl daemon-reload
 echo -e "${GREEN}Finished installing API Service.${DEFULT}"
 
 echo -e "${CYAN}Cloning GIT repo.${DEFULT}"
-sudo git https://github.com/yamileon/poolmanager-api.git
+sudo git clone https://github.com/yamileon/poolmanager-api.git
 
 echo -e "${CYAN}Moving project to base.${DEFULT}"
-sudo mv poolmanager/ ../poolmanager/
+sudo mv poolmanager-api/ ../poolmanager-api/
 
 echo -e "${CYAN}CD into project.${DEFULT}"
-cd ../poolmanager
+cd ../poolmanager-api
 
 echo -e "${CYAN}Checking into Developer."
 sudo git checkout Developer

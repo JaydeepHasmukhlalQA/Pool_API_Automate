@@ -8,5 +8,5 @@ echo -e "${BLINK} ${CYAN} Removing Files. ${DEFULT} ${NOBLINK}"
 sudo systemctl stop poolapi
 sudo systemctl disable poolapi
 
-sudo rm -fR ../poolmanager
+sudo rm -fR ../poolmanager-api
 sudo rm -fR /etc/systemd/system/poolapi.service
