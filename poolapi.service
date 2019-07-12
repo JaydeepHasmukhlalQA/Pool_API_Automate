@@ -1,10 +1,10 @@
 [Unit]
-Description=TeamB_Pool_Project_API
+Description=poolmanager
 After=network.target
 
 [Service]
 WorkingDirectory=/home/poolapi
-ExecStart=/usr/bin/node /home/poolapi/TeamB_Pool_Project_API/index.js
+ExecStart=/usr/bin/node /home/poolapi/poolmanager/index.js
 Restart=on-failure
 
 [Install]

@@ -3,39 +3,31 @@
 CYAN="\033[0;36"
 GREEN="\033[0;32m"
 DEFULT="\e[39mDefault"
-BLINK="\e[5mBlink"
-NOBLINK="\e[25mNormal"
 
-echo -e "${BLINK}${CYAN}Updateing.${DEFULT}${NOBLINK}"
-sudo apt-get update -y && apt-get upgrade -y
-
+echo -e "${CYAN} Installing Git, NodeJs.${DEFULT}"
 sudo apt-get install curl python-software-properties
 sudo curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-echo -e "${BLINK}${GREEN} Finished updating.${DEFULT}${NOBLINK}"
-
-echo -e "${BLINK}${CYAN} Installing Git, NodeJs, MongoDB.${DEFULT}${NOBLINK}"
 sudo apt-get install -y git
 sudo apt-get install -y nodejs
-sudo apt-get install -y mongodb
-echo -e "${BLINK}${GREEN} Finished Installing.${DEFULT}${NOBLINK}"
+echo -e "${GREEN} Finished Installing.${DEFULT}"
 
-echo -e "${BLINK}${CYAN} Installing API Service.${DEFULT}${NOBLINK}"
+echo -e "${CYAN} Installing API Service.${DEFULT}"
 sudo cp ./poolapi.service /etc/systemd/system/
 sudo systemctl daemon-reload
-echo -e "${BLINK}${GREEN}Finished installing API Service.${DEFULT}${NOBLINK}"
+echo -e "${GREEN}Finished installing API Service.${DEFULT}"
 
-echo -e "${BLINK}${CYAN}Cloning GIT repo.${DEFULT}${NOBLINK}"
-sudo git clone https://github.com/DimitriosKan/TeamB_Pool_Project_API.git
+echo -e "${CYAN}Cloning GIT repo.${DEFULT}"
+sudo git https://github.com/yamileon/poolmanager-api.git
 
-echo -e "${BLINK}${CYAN}Moving project to base.${DEFULT}${NOBLINK}"
-sudo mv TeamB_Pool_Project_API/ ../TeamB_Pool_Project_API/
+echo -e "${CYAN}Moving project to base.${DEFULT}"
+sudo mv poolmanager/ ../poolmanager/
 
-echo -e "${BLINK}${CYAN}CD into project.${DEFULT}${NOBLINK}"
-cd ../TeamB_Pool_Project_API
+echo -e "${CYAN}CD into project.${DEFULT}"
+cd ../poolmanager
 
-echo -e "${BLINK}${CYAN}Checking into Developer."
+echo -e "${CYAN}Checking into Developer."
 sudo git checkout Developer
 yes | sudo npm install
 
-echo -e "${BLINK}${CYAN}Starting poolapi.service.${DEFULT}${NOBLINK}"
+echo -e "${CYAN}Starting poolapi.service.${DEFULT}"
 sudo systemctl start poolapi
