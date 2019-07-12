@@ -26,7 +26,7 @@ echo -e "${CYAN}CD into project.${DEFULT}"
 cd ../poolmanager-api
 
 echo -e "${CYAN}Checking into Developer."
-sudo git checkout Developer
+sudo git checkout dev
 yes | sudo npm install
 
 echo -e "${CYAN}Starting poolapi.service.${DEFULT}"
